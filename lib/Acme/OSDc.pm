@@ -1,12 +1,13 @@
 package Acme::OSDc;
 
+use base 'Acme::Ook';
+
 my %OSDc = &{"Acme::Ook::O?"};
+
 use strict;
 use warnings;
 
-use base 'Acme::Ook';
-
-our $VERSION = '1.00';
+our $VERSION = '1.01';
 
 sub _compile {
     shift;
@@ -24,6 +25,13 @@ __END__
 Acme::OSDc - the OSDc programming language
 
 =head1 SYNOPSIS
+
+	use Acme::OSDc;
+	my $OSDc = Acme::OSDc->new;
+	
+	my $compiled = $OSDc->compile($file);
+	
+	eval $compiled;
 
 =head1 DESCRIPTION
 
